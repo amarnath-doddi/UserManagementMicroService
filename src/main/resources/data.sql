@@ -1,10 +1,8 @@
-insert into users(id,first_name,last_name,email,age, city, state, phone,last_updated) values(1,'Amarnath','Doddi','amarnath@gmail.com',30,'Bangalore','Karnataka',9123456790, sysdate);
-insert into users(id,first_name,last_name,email,age, city, state, phone,last_updated) values(2,'Ramu','Ssss','ramu@gmail.com',31,'Hyderabad','Telengana',9123457770, sysdate);
-insert into users(id,first_name,last_name,email,age, city, state, phone,last_updated) values(3,'Vinu','Bbbb','vinu@gmail.com',50,'Bangalore','Karnataka',9155556790,  sysdate);
-insert into users(id,first_name,last_name,email,age, city, state, phone,last_updated) values(4,'Dilip','Tttt','dilip@gmail.com',60,'Bangalore','Karnataka',9122426790, sysdate);
-insert into users(id,first_name,last_name,email,age, city, state, phone,last_updated) values(5,'Sham','Tttt','sham@gmail.com',60,'Bangalore','Karnataka',9122426790, sysdate);
-insert into users(id,first_name,last_name,email,age, city, state, phone,last_updated) values(6,'Dilip','Basani','basani@gmail.com',60,'Bangalore','Karnataka',9128426790, sysdate);
-insert into users(id,first_name,last_name,email,age, city, state, phone,last_updated) values(7,'Ruthvi','Doddi','ruthvi@gmail.com',5,'Bangalore','Karnataka',9122666790, sysdate);
-insert into users(id,first_name,last_name,email,age, city, state, phone,last_updated) values(8,'Jhon','Ranjan','john@gmail.com',35,'Hyderabad','Telengana',9122427790, sysdate);
-
-
+insert into users(id,login_id,password,first_name,last_name, phone,last_updated) values(1000,'amarnath@gmail.com','amardoddi','Amarnath','Doddi',9123456790, sysdate);
+insert into users(id,login_id,password,first_name,last_name,phone,last_updated) values(1002,'ramu@gmail.com','ramussss','Ramu','Ssss',9123457770, sysdate);
+insert into users(id,login_id,password,first_name,last_name, phone,last_updated) values(1003,'vinu@gmail.com','vinubbbb','Vinu','Bbbb',9155556790,  sysdate);
+insert into users(id,login_id,password,first_name,last_name, phone,last_updated) values(1004,'dilip@gmail.com','diliptttt','Dilip','Tttt',9122426790, sysdate);
+insert into users(id,login_id,password,first_name,last_name, phone,last_updated) values(1005,'sham@gmail.com','shamtttt','Sham','Tttt',9122426790, sysdate);
+insert into users(id,login_id,password,first_name,last_name, phone,last_updated) values(1006,'basani@gmail.com','dilipbasani','Dilip','Basani',9128426790, sysdate);
+insert into users(id,login_id,password,first_name,last_name, phone,last_updated) values(1007,'ruthvi@gmail.com','ruthvidoddi','Ruthvi','Doddi',9122666790, sysdate);
+insert into users(id,login_id,password,first_name,last_name, phone,last_updated) values(1008,'john@gmail.com','jhonranjan','Jhon','Ranjan',9122427790, sysdate);

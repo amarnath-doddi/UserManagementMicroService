@@ -1,2 +1,3 @@
 --create schema user_management;
-create table users(id number primary key, first_name varchar(50), last_name varchar(50), email varchar(30),age number,city varchar(30),state varchar(30),phone number, last_updated date);
+CREATE SEQUENCE hibernate_sequence START WITH 1 INCREMENT BY 1 NOCYCLE;
+create table users(id number primary key, login_id varchar(50),password varchar(50),first_name varchar(50), last_name varchar(50), phone number, last_updated date);

@@ -1,6 +1,7 @@
 package com.user.entity;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,9 +18,18 @@ import org.springframework.lang.NonNull;
 @Table(name="users")
 public class User {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name = "id")
 	private Long id;
+	@Column(name = "login_id")
+	@NonNull
+	@Size(min=5,max = 50)
+	@Email
+	private String loginId;
+	@Column(name = "password")
+	@NonNull
+	@Size(min=8,max = 30)
+	private String password;
 	@Column(name = "first_name")
 	@NonNull
 	@Size(min=2,max = 50)
@@ -28,37 +38,12 @@ public class User {
 	@NonNull
 	@Size(min=2,max = 50)
 	private String lastName;
-	@Column(name = "email")
-	@NonNull
-	@Email
-	private String email;
 	@Column(name = "last_updated")
 	private LocalDate lastUpdated;
-	@Column(name = "age")
-	@NonNull
-	private Integer age;
-	@Column(name = "city")
-	@NonNull
-	private String city;
-	@Column(name = "state")
-	@NonNull
-	private String state;
 	@Column(name = "phone")
 	@NonNull
 	private String phone;
 	
-	public User() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	public User(Long id, String firstName, String lastName, LocalDate lastUpdated) {
-		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.lastUpdated = lastUpdated;
-	}
-
 	public Long getId() {
 		return id;
 	}
@@ -83,37 +68,6 @@ public class User {
 	public void setLastUpdated(LocalDate lastUpdated) {
 		this.lastUpdated = lastUpdated;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public Integer getAge() {
-		return age;
-	}
-
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
 	public String getPhone() {
 		return phone;
 	}
@@ -121,8 +75,39 @@ public class User {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
-	
-	
-	
+
+	public String getLoginId() {
+		return loginId;
+	}
+
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id 
+        		&& Objects.equals(lastName, user.lastName)
+        		&& Objects.equals(firstName, user.firstName)
+        		&& Objects.equals(loginId, user.loginId)
+        		&& Objects.equals(password, user.password)
+        		&& Objects.equals(lastUpdated, user.lastUpdated)
+        		&& Objects.equals(phone, user.phone);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, lastName, firstName, loginId, password, phone, lastUpdated);
+    }
 }
